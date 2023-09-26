@@ -1,6 +1,8 @@
 import { component$, Slot } from "@builder.io/qwik";
 import type { RequestHandler } from "@builder.io/qwik-city";
 
+import { NavMenu } from "~/shared";
+
 // export const onGet: RequestHandler = async ({ cacheControl }) => {
 //   // Control caching for this request for best performance and to reduce hosting costs:
 //   // https://qwik.builder.io/docs/caching/
@@ -15,7 +17,7 @@ import type { RequestHandler } from "@builder.io/qwik-city";
 export default component$(() => {
   return (
     <>
-      <h1>Qwik City</h1>
+      <NavMenu/>
       <Slot />
     </>
   );
