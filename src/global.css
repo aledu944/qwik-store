@@ -52,7 +52,7 @@
   }
 
   .navbar {
-    @apply bg-body fixed w-full hidden md:flex py-5
+    @apply bg-body fixed w-full hidden md:flex py-5 z-10
   }
 
   .nav__link {
