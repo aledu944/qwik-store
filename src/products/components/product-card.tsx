@@ -6,7 +6,6 @@ export interface ProductCardProps {
 }
 
 export const ProductCard = component$<ProductCardProps>(({ product }) => {
-    console.log(product.images)
     return (
         <div class="product__card">
             <div class="product__card--content">

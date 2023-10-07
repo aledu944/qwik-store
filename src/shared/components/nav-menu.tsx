@@ -1,7 +1,11 @@
 import { component$ } from '@builder.io/qwik';
-import { Link } from '@builder.io/qwik-city';
+import { Link, useLocation } from '@builder.io/qwik-city';
 
 export const NavMenu = component$(() => {
+
+    const { url } = useLocation();
+    const path = url.pathname;
+
     return (
         <nav class="navbar">
             <div class="container flex justify-between">
@@ -10,14 +14,14 @@ export const NavMenu = component$(() => {
                 </div>
 
                 <ul class="flex gap-4">
-                    <li class={`nav__link`}>
-                        <Link>Inicio</Link> 
+                    <li class={`nav__link ${ path === '/' ? 'nav__link--active' : '' }`}>
+                        <Link href='/'>Inicio</Link> 
                     </li>
-                    <li class={`nav__link`}>
-                        <Link>Productos</Link>
+                    <li class={`nav__link  ${ path === '/products/' ? 'nav__link--active' : '' }`}>
+                        <Link href='/products'>Productos</Link>
                     </li>
-                    <li class={`nav__link`}>
-                        <Link>Carrito</Link>
+                    <li class={`nav__link ${ path === '/search/' ? 'nav__link--active' : '' }`}>
+                        <Link href='/search'>Buscar</Link>
                     </li>
                 </ul>
             </div>
